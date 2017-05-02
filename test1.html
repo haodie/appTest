@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- 设置初始缩放比例为1.0，使用设备宽度  -->
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no">
+    <!-- 在iOS下开启全屏模式  -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <!-- 隐藏 Sarafi 状态栏  -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <style>
+        div{
+            width:100px;
+            height:100px;
+            background:#000;
+        }
+    </style>
+</head>
+<body>
+<div id="test"></div>
+</body>
+<script>
+    window.onload = function(){
+        var test = document.getElementById("test");
+        test.addEventListener('touchstart',function(e){
+            e.preventDefault();
+            test.style.background="#f00";
+        });
+        test.addEventListener("touchend",function(e){
+            test.style.background="#0f0";
+        })
+        test.addEventListener('click',function (e) {
+            test.style.background="#00f";
+        });
+    }
+</script>
+</html>
